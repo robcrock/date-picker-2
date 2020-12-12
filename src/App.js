@@ -1,12 +1,14 @@
 import React, { Component } from "react"
-import "bootstrap/dist/css/bootstrap.min.css"
-import "../styles/App.css"
+
 // Imports for the DateRangePicker
 import "react-dates/lib/css/_datepicker.css"
 import "react-dates/initialize"
 import { DateRangePicker } from "react-dates"
+
+import "bootstrap/dist/css/bootstrap.min.css"
+import "./styles/App.css"
 // Import component
-import Viz from "./Viz"
+import Viz from "./components/Viz"
 
 export default class App extends Component {
   constructor(props) {
@@ -16,16 +18,6 @@ export default class App extends Component {
       endDate: null,
       focused: null,
     }
-  }
-
-  // Create the two handler functions to allow us to update the State when
-  // the Viz first initializes
-  setStartDate = (date) => {
-    this.setState({ startDate: date })
-  }
-
-  setEndDate = (date) => {
-    this.setState({ endDate: date })
   }
 
   render() {

@@ -1,9 +1,10 @@
 import { useState, useRef, useEffect } from "react"
+
 import "../styles/Viz.css"
 
 const { tableau } = window
 
-export default function Viz({ startDate, endDate }) {
+export default function Viz({ startDate, endDate, setStartDate, setEndDate }) {
   const [viz, setViz] = useState(null)
 
   // Set up the arguments to pass into the Tableau Viz function
@@ -22,6 +23,9 @@ export default function Viz({ startDate, endDate }) {
   const initViz = () => {
     setViz(new tableau.Viz(ref.current, url, options))
   }
+
+  // Initialize viz when the page loads
+  useEffect(initViz, [])
 
   // This function will run with the startDate is changed
   // update the parameter value in the workbook and update the viz
@@ -88,9 +92,6 @@ export default function Viz({ startDate, endDate }) {
   useEffect(() => {
     changeEndDateParameterValue(endDate)
   }, [endDate])
-
-  // Initialize viz when the page loads
-  useEffect(initViz, [])
 
   return <div className="viz" ref={ref} />
 }
