@@ -4,7 +4,7 @@ import "../styles/Viz.css"
 
 const { tableau } = window
 
-export default function Viz({ startDate, endDate, setStartDate, setEndDate }) {
+export default function Viz({ startDate, endDate }) {
   const [viz, setViz] = useState(null)
 
   // Set up the arguments to pass into the Tableau Viz function

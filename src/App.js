@@ -35,12 +35,7 @@ export default class App extends Component {
           focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
           onFocusChange={(focusedInput) => this.setState({ focusedInput })} // PropTypes.func.isRequired,
         />
-        <Viz
-          startDate={this.state.startDate}
-          endDate={this.state.endDate}
-          setStartDate={this.setStartDate}
-          setEndDate={this.setEndDate}
-        />
+        <Viz startDate={this.state.startDate} endDate={this.state.endDate} />
       </div>
     )
   }
